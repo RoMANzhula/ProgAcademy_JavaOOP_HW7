@@ -4,8 +4,8 @@ import java.util.Scanner;
 
 public class Client {
     private double money;
-    private int purchasedItemCounter = 0; // счетчик купленных товаров
-    private ArrayList<String> shoppingCart = new ArrayList<>(); //корзина с товаром
+    private int purchasedItemCounter = 0; // лічільник придбаних товарів
+    private ArrayList<String> shoppingCart = new ArrayList<>(); //кошик з товарами
 
     private double totalSum = 0;
 
@@ -19,7 +19,7 @@ public class Client {
     public void setMoney(double money) {
         this.money = money;
     }
-    public void customerRequest() { // запрос для клиента
+    public void customerRequest() { // запит для клієнта
         System.out.println("Welcome to our online store!" + "\n" + "Would you like to see a list of our products? Please enter Y/N:");
         Scanner scanner = new Scanner(System.in);
         String customerRequest = scanner.nextLine().toLowerCase();
@@ -32,7 +32,7 @@ public class Client {
         }
     }
 
-    public void fillingShoppingCart() {//заполняем корзину покупателя
+    public void fillingShoppingCart() {//наповнюємо кошик покупця
         System.out.println("Please select the products you want to buy (enter products separated by a new line):");
         Scanner scanner = new Scanner(System.in);
         String clientList = "s";
@@ -48,7 +48,7 @@ public class Client {
         }
     }
 
-    public void returnTotalSumShoppingCart() { // вернуть общую сумму стоимости продуктов в корзине
+    public void returnTotalSumShoppingCart() { // загальна вартість товарів в кошику
         for (String elementOfShoppingCart : shoppingCart) {
             if (elementOfShoppingCart.equals("bread")) {
                 totalSum += 25;
@@ -79,7 +79,7 @@ public class Client {
         System.out.println("Total amount due: " + totalSum);
     }
 
-    public void payForProducts(Client client) { // оплата за продукты(товары)
+    public void payForProducts(Client client) { // сплата за товар
         System.out.println("Are you ready to pay for the item you have chosen? Please enter Y/N:");
         Scanner scanner = new Scanner(System.in);
         String strToPay = scanner.nextLine().toLowerCase();
